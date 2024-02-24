@@ -15,12 +15,7 @@ import logoAirbnb from '@/images/logos/airbnb.svg'
 import logoFacebook from '@/images/logos/facebook.svg'
 import logoPlanetaria from '@/images/logos/planetaria.svg'
 import logoStarbucks from '@/images/logos/starbucks.svg'
-import image1 from '@/images/photos/78BEA69A-C981-4708-AF65-FAE5A92A8845_1_105_c.jpg'
-
-import image2 from '@/images/photos/image-2.jpg'
-import image3 from '@/images/photos/image-3.jpg'
-import image4 from '@/images/photos/image-4.jpg'
-import image5 from '@/images/photos/image-5.jpg'
+import image1 from '@/images/portrait.jpg'
 
 import { type ArticleWithSlug, getAllArticles } from '@/lib/articles'
 import { formatDate } from '@/lib/formatDate'
@@ -240,28 +235,6 @@ function Resume() {
   )
 }
 
-function Photos() {
-  // let rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2']
-
-  return (
-    <section>
-      <Container className="mt-9">
-        <div className="mt-16 sm:mt-20">
-          <Image
-            src={image1}
-            alt=""
-            sizes={'2400px' ? '1600px' : '2400px'}
-            className={clsx(
-              'aspect-[16/9] bg-zinc-100 object-contain dark:bg-zinc-800 ',
-            )}
-            priority
-          />
-        </div>
-      </Container>
-    </section>
-  )
-}
-
 export default async function Home() {
   let articles = (await getAllArticles()).slice(0, 4)
 
@@ -274,35 +247,35 @@ export default async function Home() {
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
             Forever drawing boxes around things. Available for hire as an
-            independent designer as well through my studio Magnet.
+            independent designer as well through my studio{' '}
+            <Link href="https://magnet.co">Magnet</Link>.
           </p>
           <div className="mt-6 flex gap-6">
-            <SocialLink
-              href="https://twitter.com"
+            {/* <SocialLink
+              href="https://twitter.com/gavinhall"
               aria-label="Follow on Twitter"
               icon={TwitterIcon}
-            />
+            /> */}
             <SocialLink
-              href="https://instagram.com"
+              href="https://instagram.com/gavinhall.design"
               aria-label="Follow on Instagram"
               icon={InstagramIcon}
             />
             <SocialLink
-              href="https://github.com"
+              href="https://github.com/gavin-hall"
               aria-label="Follow on GitHub"
               icon={GitHubIcon}
             />
             <SocialLink
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/gavinphall/"
               aria-label="Follow on LinkedIn"
               icon={LinkedInIcon}
             />
           </div>
         </div>
       </Container>
-      <Photos />
 
-      <Container className="mt-24 md:mt-28">
+      <Container className="mt-24 hidden md:mt-28">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
           <div className="flex flex-col gap-16">
             {articles.map((article) => (
