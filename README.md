@@ -1,6 +1,6 @@
 # gavinhall.com
 
-This is my personal website.
+This is my personal website
 
 ## Local development
 
@@ -23,7 +23,6 @@ npm run dev
 ```
 
 Finally, open [http://localhost:3000](http://localhost:3000) in your browser to view the website.
-
 
 ## Stack documentation
 
